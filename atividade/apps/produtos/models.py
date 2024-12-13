@@ -2,11 +2,16 @@ from django.db import models
 
 # Create your models here.
 class Fornecedor(models.Model):
-    lista_fornece = models.CharField(max_length=30)
+    lista_fornece = models.CharField(max_length=20)
+    def __str__(self):
+        return self.lista_fornece
+    
+
 class Categoria(models.Model):
-    lista_ctg = models.CharField(max_length=50)
+    lista_ctg = models.CharField(max_length=20)
     def __str__(self):
         return self.lista_ctg
+
 class Estoque(models.Model):
     lista_produto = models.CharField(max_length=20)
     cod_produto = models.CharField( max_length=15, unique=True)
